@@ -51,23 +51,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseRepository.cs" />
     <Compile Include="MyDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MyDataModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="MyDataModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MyDataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="MyDataModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MyDataModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="OrderClient.cs">
-      <DependentUpon>MyDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -87,11 +80,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>MyDataModel.Context.cs</LastGenOutput>
       <DependentUpon>MyDataModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="MyDataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MyDataModel.edmx</DependentUpon>
-      <LastGenOutput>MyDataModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

@@ -12,6 +12,7 @@ namespace DataAccessLayer
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using Model;
     
     public partial class MyDBEntities : DbContext
     {

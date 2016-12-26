@@ -61,6 +61,39 @@ namespace DALTestProject
             Console.WriteLine("已经删除的用户ID"+clients.Last().ClientID);
         }
 
+        [TestMethod]
+        public void TestModifyClient()
+        {
+            //先添加一条记录
+            OrderClient client = OrderClientHelper.CreateOrderClient();
+            int result = repo.AddClient(client);
+            Assert.IsTrue(result == 1);
+
+            //修改邮编
+            int oldPostCode = int.Parse(client.PostCode);
+            client.PostCode = (oldPostCode + 1).ToString();
+
+            result = repo.ModifyClient(client);
+            Assert.IsTrue(result == 1);
+
+        }
+        [TestMethod]
+        public void TestFindClientsByName()
+        {
+            //先添加一条记录
+            OrderClient client = OrderClientHelper.CreateOrderClient();
+            int result = repo.AddClient(client);
+            Assert.IsTrue(result == 1);
+
+            String FindWhat = client.ClientName.Substring(0, 2);
+            List<OrderClient> clients = repo.FindClientsByName(FindWhat);
+
+            Assert.IsTrue(clients.Count() > 0);
+            foreach (var c in clients)
+            {
+                Assert.IsTrue(c.ClientName.StartsWith(FindWhat));
+            }
+        }
 
     }
 }

@@ -18,7 +18,7 @@ namespace DataAccessLayer
 
         int AddClient(OrderClient client);
 
-        int DeleteClient(OrderClient ClientID);
+        int DeleteClient(int ClientID);
 
         int ModifyClient(OrderClient client);
     }

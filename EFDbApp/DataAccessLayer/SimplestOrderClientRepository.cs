@@ -22,7 +22,7 @@ namespace DataAccessLayer
             }
         }
 
-        public int DeleteClient(OrderClient ClientID)
+        public int DeleteClient(int ClientID)
         {
             using (var context = new MyDBEntities())
             {

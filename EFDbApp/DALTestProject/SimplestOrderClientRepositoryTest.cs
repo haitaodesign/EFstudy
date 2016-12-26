@@ -47,7 +47,19 @@ namespace DALTestProject
             OrderClient client2= Clients.FirstOrDefault(c => c.ClientName == client.ClientName);
             Console.WriteLine(client2.ClientName);
         }
-        
+
+        [TestMethod]
+        public void TestDeleteClient()
+        {
+            List<OrderClient> clients = repo.GetAllClients();
+            int clientID = clients.Last().ClientID;
+            Console.WriteLine("将要删除的用户ID"+clientID);
+            int result = repo.DeleteClient(clientID);
+            Assert.IsTrue(result == 1);
+
+            //打印出删除信息的ClientID
+            Console.WriteLine("已经删除的用户ID"+clients.Last().ClientID);
+        }
 
 
     }

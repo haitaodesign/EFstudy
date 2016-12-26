@@ -64,6 +64,7 @@
       <DependentUpon>MyDataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimplestOrderClientRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

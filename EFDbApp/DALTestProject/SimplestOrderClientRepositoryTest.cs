@@ -34,6 +34,19 @@ namespace DALTestProject
             Assert.IsTrue(Clients.Count() > 0);
         }
 
+        [TestMethod]
+        public void TestAddClient()
+        {
+            OrderClient client = OrderClientHelper.CreateOrderClient();
+            int result= repo.AddClient(client);
+            Assert.IsTrue(result == 1);
+            String name = client.ClientName;
+
+            //是否添加成功
+            List<OrderClient> Clients = repo.GetAllClients();
+            OrderClient client2= Clients.FirstOrDefault(c => c.ClientName == client.ClientName);
+            Console.WriteLine(client2.ClientName);
+        }
         
 
 
